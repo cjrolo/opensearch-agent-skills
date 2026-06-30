@@ -1,0 +1,25 @@
+{
+  "profile_id": "opensearch-self-v1",
+  "system": "opensearch",
+  "cluster_id": "local-dev",
+  "index_pattern": "*",
+  "timestamp_field": "@timestamp",
+  "identity": {
+    "node_field": "node.name",
+    "partition_field": "index"
+  },
+  "metrics": {
+    "primary_shard_size_bytes": "_cat/shards.store",
+    "deleted_docs": "_stats.docs.deleted",
+    "disk_usage_bytes": "_cat/indices.pri.store.size"
+  },
+  "dimensions": ["index", "node"],
+  "thresholds": {
+    "oversharding_min_primary_shards": 8,
+    "small_shard_bytes": 5368709120,
+    "skew_ratio": 3.0,
+    "deleted_docs_ratio": 0.2,
+    "lifecycle_min_index_bytes": 10737418240,
+    "query_cost_top_n": 5
+  }
+}
