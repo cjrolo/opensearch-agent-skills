@@ -13,8 +13,10 @@ description: >
   shard skew, segment waste, ISM disk inflation, query-cost hotspots, finding,
   verdict, ops advisor, or unknown blind spots. Activate even if the user says
   log analysis, Fluent Bit, Fluentd, Logstash, syslog, traceId, OpenTelemetry,
-  or log analytics without mentioning OpenSearch.
-compatibility: Requires Docker and uv. AWS deployment requires AWS credentials.
+  Instaclustr, or NetApp Instaclustr without mentioning OpenSearch.
+compatibility: >
+  Requires Docker and uv. AWS deployment requires AWS credentials.
+  Instaclustr provisioning requires an Instaclustr Provisioning API key.
 metadata:
   author: opensearch-project
   version: "2.0"
@@ -30,6 +32,7 @@ This is the top-level skill for OpenSearch. It contains three category skills th
 | [observability](observability/SKILL.md) | [log-analytics](observability/log-analytics/SKILL.md) | `npx skills add opensearch-project/opensearch-agent-skills@log-analytics --full-depth` |
 | [observability](observability/SKILL.md) | [trace-analytics](observability/trace-analytics/SKILL.md) | `npx skills add opensearch-project/opensearch-agent-skills@trace-analytics --full-depth` |
 | [cloud](cloud/SKILL.md) | [aws-setup](cloud/aws-setup/SKILL.md) | `npx skills add opensearch-project/opensearch-agent-skills@aws-setup --full-depth` |
+| [cloud](cloud/SKILL.md) | [instaclustr-setup](cloud/instaclustr-setup/SKILL.md) | `npx skills add opensearch-project/opensearch-agent-skills@instaclustr-setup --full-depth` |
 | [operations](operations/SKILL.md) | [ops-advisor](operations/ops-advisor/SKILL.md) | `npx skills add opensearch-project/opensearch-agent-skills@ops-advisor --full-depth` |
 
 ## Routing
@@ -42,6 +45,7 @@ Route to the right skill based on user intent:
 | Analyze logs, query with PPL, discover error patterns | [log-analytics](observability/log-analytics/SKILL.md) |
 | Investigate traces, debug spans, analyze service maps | [trace-analytics](observability/trace-analytics/SKILL.md) |
 | Deploy to AWS, provision a domain or collection | [aws-setup](cloud/aws-setup/SKILL.md) |
+| Provision managed OpenSearch on NetApp Instaclustr (Cluster Management API or Terraform) | [instaclustr-setup](cloud/instaclustr-setup/SKILL.md) |
 | Detect cost/operational risks, surface blind spots, capture operator judgment | [ops-advisor](operations/ops-advisor/SKILL.md) |
 | General OpenSearch question | Search docs first, then route to the relevant skill |
 

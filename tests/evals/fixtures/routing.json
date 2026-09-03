@@ -70,5 +70,17 @@
     "prompt": "How do I configure IAM roles and SigV4 auth for my OpenSearch domain?",
     "expected_skill": "aws-setup",
     "rationale": "IAM + SigV4 are aws-setup keywords"
+  },
+  {
+    "id": "routing-instaclustr-01",
+    "prompt": "Provision an OpenSearch cluster on NetApp Instaclustr in AWS us-east-1",
+    "expected_skill": "instaclustr-setup",
+    "rationale": "Explicit Instaclustr provisioning"
+  },
+  {
+    "id": "routing-instaclustr-02",
+    "prompt": "Create a managed OpenSearch cluster with the Instaclustr Cluster Management API and emit Terraform",
+    "expected_skill": "instaclustr-setup",
+    "rationale": "Cluster Management API + Terraform is this skill"
   }
 ]

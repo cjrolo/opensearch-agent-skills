@@ -1,0 +1,29 @@
+terraform {
+  required_providers {
+    instaclustr = {
+      source  = "instaclustr/instaclustr"
+      version = ">= 2.0.0, < 3.0.0"
+    }
+  }
+}
+
+variable "instaclustr_username" {
+  type      = string
+  sensitive = true
+}
+
+variable "instaclustr_api_key" {
+  type      = string
+  sensitive = true
+}
+
+provider "instaclustr" {
+  terraform_key = "Instaclustr-Terraform ${var.instaclustr_username}:${var.instaclustr_api_key}"
+}
+
+# Cluster already provisioned via API. Import before apply:
+# terraform import instaclustr_opensearch_cluster_v2.this {{CLUSTER_ID}}
+
+resource "instaclustr_opensearch_cluster_v2" "this" {
+{{RESOURCE_BODY}}
+}
