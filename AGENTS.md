@@ -55,6 +55,11 @@ skills/
         aos/                      # Amazon OpenSearch Service guides
         aoss/                     # Amazon OpenSearch Serverless guides
         reference.md              # Cost, security, troubleshooting
+      instaclustr-setup/          # Leaf skill: NetApp Instaclustr provisioning
+        SKILL.md
+        reference/                # API, providers, Terraform
+        scripts/                  # Cluster Management API CLI
+        templates/                 # Emitted Terraform snippets
 tests/                            # pytest test suite (no cluster required)
 ```
 

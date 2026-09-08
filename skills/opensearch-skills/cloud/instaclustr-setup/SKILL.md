@@ -2,9 +2,9 @@
 name: instaclustr-setup
 description: >
   Provision a NetApp Instaclustr managed OpenSearch cluster. Use this skill
-  when the user wants Instaclustr, NetApp Instaclustr, Cluster Management API,
-  Instaclustr Terraform, BYOC OpenSearch, AWS_VPC, GCP, Azure, or
-  Instaclustr-hosted OpenSearch — not Amazon OpenSearch Service or Serverless.
+  when the user wants Instaclustr, NetApp Instaclustr, Instaclustr OpenSearch,
+  the Instaclustr Cluster Management API, or the Instaclustr Terraform
+  provider. Activate even if they say Instaclustr-hosted or Instaclustr BYOC.
 compatibility: >
   Requires INSTACLUSTR_API_USERNAME and INSTACLUSTR_API_KEY (Provisioning API
   key) and uv. Terraform apply is optional and not run by this skill.

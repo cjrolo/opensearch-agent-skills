@@ -14,6 +14,7 @@ Skills are organized in a tree — install the whole collection or pick individu
 | **Observability** | [log-analytics](skills/opensearch-skills/observability/log-analytics/) | Query and analyze logs with PPL — error patterns, anomaly detection |
 | **Observability** | [trace-analytics](skills/opensearch-skills/observability/trace-analytics/) | Investigate distributed traces — slow spans, service maps, agent invocations |
 | **Cloud** | [aws-setup](skills/opensearch-skills/cloud/aws-setup/) | Deploy to Amazon OpenSearch Service or Serverless |
+| **Cloud** | [instaclustr-setup](skills/opensearch-skills/cloud/instaclustr-setup/) | Provision managed OpenSearch on NetApp Instaclustr |
 
 > More skills coming soon — contributions welcome! See [DEVELOPER_GUIDE.md](DEVELOPER_GUIDE.md).
 
@@ -32,6 +33,7 @@ npx skills add opensearch-project/opensearch-agent-skills@opensearch-launchpad -
 npx skills add opensearch-project/opensearch-agent-skills@log-analytics --full-depth
 npx skills add opensearch-project/opensearch-agent-skills@trace-analytics --full-depth
 npx skills add opensearch-project/opensearch-agent-skills@aws-setup --full-depth
+npx skills add opensearch-project/opensearch-agent-skills@instaclustr-setup --full-depth
 ```
 
 ### Install options
@@ -76,6 +78,7 @@ Your agent reads the skill instructions and runs the scripts directly — no MCP
 - **Python 3.11+** and [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
 - **Docker** installed and running ([Download Docker](https://docs.docker.com/get-docker/))
 - **For AWS deployment (optional):** AWS credentials configured
+- **For Instaclustr provisioning (optional):** `INSTACLUSTR_API_USERNAME` and a Provisioning API key in `INSTACLUSTR_API_KEY`
 
 ---
 
@@ -109,6 +112,11 @@ skills/
         aos/                          # Amazon OpenSearch Service guides
         aoss/                         # Amazon OpenSearch Serverless guides
         reference.md
+      instaclustr-setup/              # NetApp Instaclustr provisioning
+        SKILL.md
+        reference/                    # API, providers, Terraform
+        scripts/                      # Cluster Management API CLI
+        templates/                    # Emitted Terraform snippets
 tests/                                # pytest test suite
 ```
 
